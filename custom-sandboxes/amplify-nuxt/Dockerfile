@@ -1,4 +1,4 @@
-FROM all-hands/node:16
+FROM node:16-bullseye
 
 WORKDIR /app
 
