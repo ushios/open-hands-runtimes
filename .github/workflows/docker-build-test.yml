@@ -1,0 +1,26 @@
+name: Build Amplify Nuxt Docker Image
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "custom-sandboxes/amplify-nuxt/**"
+  pull_request:
+    branches: [main]
+    paths:
+      - "custom-sandboxes/amplify-nuxt/**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build Docker image for amplify-nuxt
+        run: |
+          docker build -t amplify-nuxt custom-sandboxes/amplify-nuxt
