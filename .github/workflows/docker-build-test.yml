@@ -34,7 +34,19 @@ jobs:
 
       - name: Test container
         run: |
-          docker run --rm amplify-nuxt:test npm --version
+          # Test Node.js and npm
           docker run --rm amplify-nuxt:test node --version
-          docker run --rm amplify-nuxt:test which npm
-          docker run --rm amplify-nuxt:test which node
+          docker run --rm amplify-nuxt:test npm --version
+          
+          # Test Amplify CLI installation
+          docker run --rm amplify-nuxt:test amplify --version
+          
+          # Test required system dependencies
+          docker run --rm amplify-nuxt:test python3 --version
+          docker run --rm amplify-nuxt:test git --version
+          
+          # Test TypeScript installation
+          docker run --rm amplify-nuxt:test tsc --version
+          
+          # Test working directory
+          docker run --rm amplify-nuxt:test pwd
