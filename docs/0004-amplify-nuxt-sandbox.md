@@ -5,11 +5,11 @@
 ## 概要
 
 このカスタムサンドボックスは、AWS Amplify と Nuxt.js を使用したTypeScriptベースのアプリケーション開発に特化した環境を提供します。
-OpenHands の推奨イメージ（all-hands/node:16）をベースとし、Node.js アプリケーションの実行環境を構築します。
+Node.js 22 の Debian ベースイメージをベースとし、Node.js アプリケーションの実行環境を構築します。
 
 ## 構成
 
-- ベースイメージ: `all-hands/node:16`
+- ベースイメージ: `node:22-bullseye`
 - 作業ディレクトリ: `/app`
 - 公開ポート: 3000
 - 環境変数:
